@@ -1,0 +1,80 @@
+# Import datetime so that it can be
+# used to compute a person's age.
+from datetime import datetime
+
+
+def compute_age(birth_str):
+    """Compute and return a person's age in years.
+    Parameter birth_str: a person's birthdate stored
+        as a string in this format: YYYY-MM-DD
+    Return: a person's age in years.
+    """
+    # Convert a person's birthdate from a string
+    # to a date object.
+    birthdate = datetime.strptime(birth_str, "%Y-%m-%d")
+    today = datetime.now()
+
+    # Compute the difference between today and the
+    # person's birthdate in years.
+    years = today.year - birthdate.year
+
+    # If necessary, subtract one from the difference.
+    if birthdate.month > today.month or \
+        (birthdate.month == today.month and \
+            birthdate.day > today.day):
+        years -= 1
+
+    return years
+
+
+def kg_from_lb(pounds):
+    """Convert a mass in pounds to kilograms.
+    Parameter pounds: a mass in U.S. pounds.
+    Return: the mass in kilograms.
+    """
+    kg = (0.45359237 * pounds)
+
+    return kg
+
+
+def cm_from_in(inches):
+    """Convert a length in inches to centimeters.
+    Parameter inches: a length in inches.
+    Return: the length in centimeters.
+    """
+    return
+
+
+def body_mass_index(weight, height):
+    """Compute and return a person's body mass index.
+    Parameters
+        weight: a person's weight in kilograms.
+        height: a person's height in centimeters.
+    Return: a person's body mass index.
+    """
+    return
+
+
+def basal_metabolic_rate(gender, weight, height, age):
+    """Compute and return a person's basal metabolic rate.
+    Parameters
+        weight: a person's weight in kilograms.
+        height: a person's height in centimeters.
+        age: a person's age in years.
+    Return: a person's basal metabolic rate in kcals per day.
+    """
+    return
+
+def main():
+    user_age = compute_age(input("What is your birthday: "))
+    user_age_pounds = kg_from_lb(input("What is your weight in lbs: "))
+
+    print(user_age,int(user_age_pounds))
+    
+
+    pass
+
+main()
+# Call the main function so that
+# this program will start executing.
+
